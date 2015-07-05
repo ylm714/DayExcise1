@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>layout</title>
+	<style type="text/css">
+		div{
+			background-color: #ccc;
+		}
+		#leftTop{
+			position: absolute;top:20px;left:0;width: 100px;height: 150px;background-color: red;
+		}
+		#leftBottom{
+			position: absolute;top:180px;left:0;width:100px;height:150px;background-color: green;
+		}
+		#right{
+			position: absolute;top:20px;left:110px;width:200px;height:310px;background-color: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		function change(obj){
+        obj.style.width=obj.clientWidth*1.5+"px";
+        if(obj.id!="b"){
+            obj.style.height=obj.clientHeight*1.5+"px";
+        }
+        obj.style.background="#f00";
+        obj.style.lineHeight=obj.style.height;
+        obj.style.border="2px solid #0F3";
+        obj.style.zIndex=1;
+    }
+	    function reinstate(obj){
+	        obj.style.width=obj.clientWidth/1.5+"px";
+			if(obj.id!="b"){
+	            obj.style.height=obj.clientHeight/1.5+"px";
+	        }
+        obj.style.background="#ccc";
+        obj.style.lineHeight=obj.style.height;
+        obj.style.border="none";
+        obj.style.zIndex=0;
+    }
+		
+	</script>
+</head>
+<body>
+	<div id="leftTop" onmouseover="change(this)" onmouseout="reinstate(this)">1111</div>
+	<div id="leftBottom" onmouseover="change(this)" onmouseout="reinstate(this)">2222</div>
+	<div id="right" onmouseover="change(this)" onmouseout="reinstate(this)">3333</div>
+</body>
+</html>
+

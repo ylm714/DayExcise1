@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang=zh-cn>
+<head>
+	<meta charset="utf-8">
+<title>css3做tab条切换</title>
+<style>
+
+
+*{margin:0px;padding:0px;}
+
+body{background:#b1b1b1;margin:0px;padding:0px;font-size:14px;color:#000;}
+
+.radiotabs {width:702px; margin:30px auto;}
+
+input.tabs {display:none;}
+
+input.tabs + label {
+display:block; font:normal 12px/30px arial, sans-serif; border:1px solid #aaa; background:#69c; text-decoration:none; color:#fff; 
+float:left;position:relative; padding:0 20px; margin-right:2px;
+border-radius:5px 5px 0 0; 
+}
+
+.tabcontent {width:700px; padding:20px; border:1px solid #aaa; border-radius:0 5px 5px 5px; background:#fff; position:relative; z-index:10; display:none; clear:left; top:-1px;
+ box-shadow:0 15px 10px -15px rgba(0,0,0,0.4);
+}
+
+.tabcontent {display:none;color:#000;}
+
+input.tabs:checked + label {background-color:#fff; border-bottom:1px solid #fff; color:#000; z-index:20;}
+
+input#tab1:checked ~ section#view1 {display:block;}
+input#tab2:checked ~ section#view2 {display:block;}
+input#tab3:checked ~ section#view3 {display:block;}
+input#tab4:checked ~ section#view4 {display:block;}
+input#tab5:checked ~ section#view5 {display:block;}
+
+</style>
+</head>
+
+
+
+<body>
+<section class="radiotabs">
+	<input type="radio" name="tab" id="tab1" class="tabs" checked="checked">
+		<label for="tab1">
+			tab1
+		</label>
+	<input type="radio" name="tab" id="tab2" class="tabs">
+		<label for="tab2">
+			tab2
+		</label>
+	<input type="radio" name="tab" id="tab3" class="tabs">
+		<label for="tab3">
+			tab3
+		</label>
+	<input type="radio" name="tab" id="tab4" class="tabs">
+		<label for="tab4">
+			tab4
+		</label>
+	<input type="radio" name="tab" id="tab5" class="tabs">
+		<label for="tab5">
+			tab5
+		</label>
+	<section id="view1" class="tabcontent">
+		内容一
+	</section>
+	<section id="view2" class="tabcontent">
+		内容二
+	</section>
+	<section id="view3" class="tabcontent">
+		内容三
+	</section>
+	<section id="view4" class="tabcontent">
+		内容四
+	</section>
+	<section id="view5" class="tabcontent">
+		内容五
+	</section>
+</section>
+</body>
+</html>
